@@ -17,9 +17,9 @@ public class Data {
 
     // # CALCLATIONS
     toYears = periodDays / YEAR_DAYS; 
-    toMonth = periodDays % MONTH_DAYS;
-    toWeeks = periodDays % WEEKS_DAYS;
-    toDays = periodDays % YEAR_DAYS % MONTH_DAYS % WEEKS_DAYS;
+    toMonth = (periodDays % YEAR_DAYS)/MONTH_DAYS;
+    toWeeks = ((periodDays % YEAR_DAYS)%MONTH_DAYS)/WEEKS_DAYS;
+    toDays = ((periodDays % YEAR_DAYS) % MONTH_DAYS) % WEEKS_DAYS;
 
     // # PRINT RESULTS
     System.out.println(periodDays + " Days = " + toYears  + " Years, " + toMonth + " Months, " + toWeeks + " Weeks, " + toDays + " Days.");
